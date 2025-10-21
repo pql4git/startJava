@@ -1,0 +1,27 @@
+div {
+  border: 2px solid red;
+  padding: 10px;
+}
+
+table {
+  border: 2px solid green;
+  width: 200px;
+}
+
+td {
+    border: 1px solid lightgreen;
+}
+
+img {
+  border: 2px solid blue;
+  width: 100px;
+  height: 100px;
+}
+
+hr {
+  border: 2px solid orange;
+}
+
+fieldset {
+  border: 2px solid purple;
+}
