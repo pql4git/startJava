@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>枠線の色サンプル</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        div {
+            padding: 15px;
+            margin: 15px 0;
+            border-width: 3px; /* 枠線の太さ */
+            border-radius: 5px; /* 角を少し丸くする */
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* 色名で指定 */
+        .border-red {
+            border-style: solid;
+            border-color: red;
+        }
+
+        /* 16進数カラーコードで指定 */
+        .border-blue {
+            border-style: solid;
+            border-color: #007bff;
+        }
+
+        /* RGB値で指定 */
+        .border-green {
+            border-style: solid;
+            border-color: rgb(40, 167, 69);
+        }
+
+        /* HSL値で指定 */
+        .border-orange {
+            border-style: solid;
+            border-color: hsl(30, 100%, 50%);
+        }
+
+        /* 破線 (dashed) */
+        .border-dashed-purple {
+            border-style: dashed;
+            border-color: purple;
+        }
+
+        /* 点線 (dotted) */
+        .border-dotted-gray {
+            border-style: dotted;
+            border-color: #888;
+        }
+
+        /* 二重線 (double) */
+        .border-double-black {
+            border-style: double;
+            border-color: black;
+            border-width: 5px; /* 二重線は太めの方が見やすい */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTMLの枠線サンプル</h1>
+
+    <div class="border-red">色名で指定 (red)</div>
+    <div class="border-blue">16進数カラーコードで指定 (#007bff)</div>
+    <div class="border-green">RGB値で指定 (rgb(40, 167, 69))</div>
+    <div class="border-orange">HSL値で指定 (hsl(30, 100%, 50%))</div>
+    <div class="border-dashed-purple">紫色の破線 (dashed)</div>
+    <div class="border-dotted-gray">灰色の点線 (dotted)</div>
+    <div class="border-double-black">黒色の二重線 (double)</div>
+
+</body>
+</html>
