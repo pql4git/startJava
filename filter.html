@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>IEとEdgeで幅が違うフィルター例</title>
+<style>
+/* --- ① box-sizing の違い例 --- */
+/*①	CSSのbox-sizing設定の違い	IEはデフォルトでcontent-box、Edgeはborder-box扱いになる場合あり
+②	デフォルトフォント・padding差	ブラウザの基本スタイルが違うため同じinputでも幅が変化
+③	DOCTYPE宣言（互換モード）	IEの互換表示ではwidth計算ルールが異なる
+④	CSSリセットの有無	Normalize.cssなどがないとブラウザごとに初期margin/paddingが異なる
+⑤	flex/gridの扱い差	IEは一部gridやflexを正確に解釈しないため幅の分配がずれる*/
+.box1 input {
+  width: 200px;
+  padding: 10px;
+  border: 2px solid gray;
+  box-sizing: content-box; /* IEでのデフォルトに近い */
+}
+
+/* --- ② デフォルトpadding・フォント差 --- */
+.box2 input {
+  width: 200px;
+  font-family: "Segoe UI", Arial;
+  padding: 6px 12px;
+}
+
+/* --- ③ DOCTYPEの影響を比較するためのボックス --- */
+.box3 {
+  width: 50%;
+  border: 1px solid #999;
+}
+.box3 input {
+  width: 100%;
+}
+
+/* --- ④ CSSリセットの影響 --- */
+.box4 input {
+  width: 200px;
+  margin: 0;   /* リセットされないとブラウザ差が出る */
+  padding: 8px;
+}
+
+/* --- ⑤ flex/gridによるズレ --- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 8px;
+}
+.grid input {
+  width: 100%;
+  padding: 8px;
+}
+</style>
+</head>
+
+<body>
+<h2>IEとEdgeでフィルター幅が異なる要因サンプル</h2>
+
+<div class="box1">
+  <p>① box-sizing の違い</p>
+  <input type="text" placeholder="検索...">
+</div>
+
+<div class="box2">
+  <p>② フォント・padding の違い</p>
+  <input type="text" placeholder="Filter...">
+</div>
+
+<div class="box3">
+  <p>③ DOCTYPE・互換モードの違い</p>
+  <input type="text" placeholder="input field">
+</div>
+
+<div class="box4">
+  <p>④ CSSリセットの有無</p>
+  <input type="text" placeholder="filter box">
+</div>
+
+<div class="grid">
+  <p>⑤ grid の幅分配差</p>
+  <input type="text" placeholder="検索条件">
+  <button>検索</button>
+</div>
+
+</body>
+</html>
+
